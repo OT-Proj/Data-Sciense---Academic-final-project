@@ -1,0 +1,7 @@
+.header-bg {
+background: white;
+}
+.main-content {
+background: url('/static/site-bg.png'); no-repeat center center fixed;
+}
+

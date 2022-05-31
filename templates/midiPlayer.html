@@ -1,0 +1,33 @@
+{% extends 'layout2.html' %}
+{% block title %}
+Random MIDI
+{% endblock %}
+{% block content %}
+<div class="justify-content-center">
+    <script src="/static/midiplayer.js"></script>
+    <div>
+        <h3>Here is a randomly generated MIDI file, just for you!</h3>
+    </div>
+    <div>
+        &nbsp;
+    </div>
+    <div class="d-flex justify-content-center table-responsive">
+        <midi-visualizer type="waterfall" id="waterfallCheckbox"
+                         src="{{url_for('static', filename=midi_file)}}"
+        >
+        </midi-visualizer>
+    </div>
+    <div>
+        &nbsp;
+    </div>
+    <div class="d-flex justify-content-center">
+        <midi-player
+                src="{{url_for('static', filename=midi_file)}}"
+                sound-font visualizer="#waterfallCheckbox"
+        >
+        </midi-player>
+    </div>
+</div>
+{% endblock %}
+{% block footer %}
+{% endblock %}

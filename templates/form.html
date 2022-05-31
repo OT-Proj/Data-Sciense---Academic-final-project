@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-center container">
+    <form action="/data" method="POST">
+        <input class="form-check-input radio-inline" type="radio" name="options" id="option1" value="option1">
+        Option1
+        </input>
+        <input class="form-check-input radio-inline" type="radio" name="options" id="option2" value="option2">
+        Option2
+        </input>
+        <input class="form-check-input radio-inline" type="radio" name="options" id="option3" value="option3">
+        Option3
+        </input>
+
+        <p>Name <input type="text" name="Name"/></p>
+        <p>City <input type="text" name="City"/></p>
+        <p>Country <input type="text" name="Country"/></p>
+        <p><input type="submit" value="Submit"/></p>
+    </form>
+</div>
+{% endblock %}
