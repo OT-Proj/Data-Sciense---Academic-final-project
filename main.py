@@ -1,8 +1,11 @@
 from flask import Flask, render_template, request
+from torch._C._te import Cond
+
+import Consts
 from Generator import Generator
 from Discriminator import Discriminator
 from GAN import GAN
-from apscheduler.schedulers.background import BackgroundScheduler
+import random
 
 app = Flask(__name__)
 model = GAN("model/GAN_generator_55 (4).dat", "model/GAN_discriminator_5.dat", "model/GAN_scaler_5.dat",
@@ -12,6 +15,8 @@ model = GAN("model/GAN_generator_55 (4).dat", "model/GAN_discriminator_5.dat", "
 @app.route('/')
 def midiPlayer():
     filename = model.generate()
-    return render_template('midiPlayer.html', midi_file=filename)
+    msg = random.choice(Consts.messages)
+    print(msg)
+    return render_template('midiPlayer.html', midi_file=filename, message=msg)
 
 app.run(host='localhost', port=5000, debug=True)
