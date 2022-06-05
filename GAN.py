@@ -117,6 +117,4 @@ class GAN:
 
         midi_file.instruments.append(midi_channel)
         midi_file.write(filename)
-        print("File created: %s" % filename)
-        print("Written %d out of %d" %(written, num_notes))
         return finalized_notes

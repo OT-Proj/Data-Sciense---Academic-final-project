@@ -12,11 +12,14 @@ model = GAN("model/GAN_generator_55 (4).dat", "model/GAN_discriminator_5.dat", "
             "model/x_real.pickle", "model/y_real.pickle")
 
 
-@app.route('/')
+@app.route('/midiPlayer')
 def midiPlayer():
     filename = model.generate()
     msg = random.choice(Consts.messages)
-    print(msg)
     return render_template('midiPlayer.html', midi_file=filename, message=msg)
+
+@app.route('/')
+def about():
+    return render_template('about.html')
 
 app.run(host='localhost', port=5000, debug=True)

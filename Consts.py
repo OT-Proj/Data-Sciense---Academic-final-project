@@ -9,7 +9,6 @@ messages = [
     "Here is a randomly generated MIDI file, just for you!",
     "Another grammy award winning MIDI file from JetBit!",
     "Where words fail, music speaks.",
-    "A song is like a face. Both can be generated with GAN!",
-    "Some people have lives; some people have music. Some people are programmers.",
+    "Each song is like a face. Both can be generated with GAN!",
     "A painter paints pictures on canvas. But musicians paint their pictures on silence."
 ]
